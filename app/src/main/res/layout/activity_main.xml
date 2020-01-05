@@ -9,7 +9,12 @@
         android:background="@color/gray">
 
     <GridView
+
+            android:horizontalSpacing="5pt"
+            android:verticalSpacing="5pt"
+            android:columnWidth="64pt"
+            android:numColumns="auto_fit"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" android:id="@+id/gvListFood"/>
 
 </LinearLayout>
