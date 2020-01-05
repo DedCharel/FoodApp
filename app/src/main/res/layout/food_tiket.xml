@@ -7,17 +7,17 @@
         android:padding="3pt">
 
     <LinearLayout
-
+            android:gravity="center"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background">
         <ImageView
-                android:layout_gravity="center"
+
                 android:layout_width="50pt"
                 android:layout_height="50pt" app:srcCompat="@drawable/espresso" android:id="@+id/ivFood"/>
         <TextView
-                android:text="Coffe"
+                android:text="Coffee"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/tvName"

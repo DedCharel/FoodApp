@@ -1,6 +1,7 @@
 package ru.nvg_soft.foodapp
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         listOfFood.add(Food("Espresso","Описание содержащее множество букв для того чтобы клиент все понял",R.drawable.espresso))
         listOfFood.add(Food("French fries","Описание содержащее множество букв для того чтобы клиент все понял",R.drawable.french_fries))
         listOfFood.add(Food("Honey","Описание содержащее множество букв для того чтобы клиент все понял",R.drawable.honey))
-        listOfFood.add(Food("Strawberry ice cream","Описание содержащее множество букв для того чтобы клиент все понял",R.drawable.strawberry_ice_cream))
+        listOfFood.add(Food("Strawberry","Описание содержащее множество букв для того чтобы клиент все понял",R.drawable.strawberry_ice_cream))
         listOfFood.add(Food("sugar cubes","Описание содержащее множество букв для того чтобы клиент все понял",R.drawable.sugar_cubes))
 
         adapter = FoodAdapter(this, listOfFood)
@@ -44,6 +45,13 @@ class MainActivity : AppCompatActivity() {
             var inflater = context!!.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             var foodView = inflater.inflate(R.layout.food_tiket,null)
             foodView.ivFood.setImageResource(food.image!!)
+            foodView.ivFood.setOnClickListener{
+                val intent = Intent(context,FoodDetails::class.java)
+                intent.putExtra("name",food.name!!)
+                intent.putExtra("des",food.des!!)
+                intent.putExtra("image",food.image!!)
+                context!!.startActivity(intent)
+            }
             foodView.tvName.text = food.name
             return foodView
         }
